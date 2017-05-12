@@ -17,6 +17,16 @@ export class UserComponent implements OnInit {
       id: this.activeRoute.snapshot.params['id'],
       name: this.activeRoute.snapshot.params['name']
     };
+
+    //the params object is an observable, you subscribe to it and gets fired
+    //only on change
+    this.activeRoute.params.subscribe(
+      (params) => {
+        this.user.id = params['id'];
+        this.user.name = params['name'];
+      }
+    );
+
   }
 
 }
