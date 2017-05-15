@@ -28,7 +28,8 @@ export class ServerComponent implements OnInit {
     //Absolute path
     // this.router.navigate(['/servers', this.server.id, 'edit']);
     //Realative path to the path you are on
-    this.router.navigate(['edit'], {relativeTo: this.actRoute});
+    // this.router.navigate(['edit'], {relativeTo: this.actRoute, preserveQueryParams: true});
+    this.router.navigate(['edit'], {relativeTo: this.actRoute, queryParamsHandling: 'preserve'});
   }
 
 }
