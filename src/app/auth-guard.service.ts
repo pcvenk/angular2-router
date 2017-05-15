@@ -7,9 +7,10 @@ import {
 
 import { Observable } from 'rxjs/Observable';
 import { Injectable } from '@angular/core';
+
 import { AuthService } from './auth.service';
 
-@Injectable
+@Injectable()
 export class AuthGuard implements CanActivate {
   constructor(private authService: AuthService,
               private router: Router) {}
