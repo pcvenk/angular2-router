@@ -24,8 +24,11 @@ export class ServerComponent implements OnInit {
     );
   }
 
-  goBack() {
-    this.router.navigate(['/']);
+  ediServer() {
+    //Absolute path
+    // this.router.navigate(['/servers', this.server.id, 'edit']);
+    //Realative path to the path you are on
+    this.router.navigate(['edit'], {relativeTo: this.actRoute});
   }
 
 }
