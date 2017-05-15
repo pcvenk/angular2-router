@@ -13,6 +13,7 @@ export class EditServerComponent implements OnInit {
   serverName = '';
   serverStatus = '';
   queryParams;
+  allowEdit = false;
 
   constructor(private serversService: ServersService,
               private actRoute: ActivatedRoute) { }
@@ -22,7 +23,7 @@ export class EditServerComponent implements OnInit {
     console.log(this.actRoute.snapshot.fragment);
     this.actRoute.queryParams.subscribe(
       (params) => {
-        this.queryParams = params['allowEdit'];
+        this.allowEdit = params['allowEdit'] === '1'? true : false;
         console.log(this.queryParams);
       }
     );
