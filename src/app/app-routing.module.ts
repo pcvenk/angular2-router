@@ -24,7 +24,7 @@ const appRoutes: Routes = [
       { path: ':id/:name', component: UserComponent }
     ]
   },
-  { path: '**', component: PageNotFoundComponent}
+  { path: '**', component: PageNotFoundComponent, data: {message: 'Page Not Found'}}
 ];
 
 @NgModule ({
