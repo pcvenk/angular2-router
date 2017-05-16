@@ -13,11 +13,12 @@ export class PageNotFoundComponent implements OnInit {
   constructor(private actRoute: ActivatedRoute) { }
 
   ngOnInit() {
+    console.log(this.actRoute);
     this.actRoute.data.subscribe(
       (data) => {
         this.message = data['message'];
       }
-    )
+    );
   }
 
 
